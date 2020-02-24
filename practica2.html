@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Objeto navegador</title>
+    <title>Practica 2</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -31,10 +31,12 @@
 
     <button id="boton" onclick="obtieneDatos()" >Obtiene datos del navegador</button>
 
-    <p class="parrafos texto1">Este es parrafo 1</p>
     <p class="datos"></p>
+    <p class="parrafos">Este es parrafo</p>
+    
 
     <ul id="navegador">
+        <li></li>
         <li></li>
         <li></li>
         <li></li>
@@ -46,10 +48,10 @@
 
         function obtieneDatos(){
 
-            console.log("Nombre del navegador: " + navigator.appCodeName);
-            console.log("Version del navegador: " + navigator.appVersion);          
-            console.log("Nombre del navegador: " + navigator.platform);
-            console.log("Estatus de internet:" + navigator.onLine);
+            console.log("Nombre del navegador es: "  + navigator.appCodeName);
+            console.log("La versión del navegador es: " + navigator.appVersion);
+            console.log("Estatus de internet: " + navigator.onLine);
+            console.log("Plataforma: " + navigator.platform);
         }
 
     </script>
