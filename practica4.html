@@ -3,28 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practicas SistemasGeo</title>
+    <title>Practica 4</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <style>
-        div{
-            background-color: #cccccc;
-            color: #ffffff;
-        }
-    </style>
-
 </head>
 <body>
-    <div class="container">
-    <h1>Practicas - Axel Visoso</h1>
-        <ul>
-            <li><a href="practica1.html">Practica 1 - Google maps API</a></li>
-            <li><a href="practica2.html">Practica 2 - Obtener datos navegador</a></li>
-            <li><a href="practica3.html">Practica 3 - Obtener coordenadas</a></li>
-            <li><a href="practica4.html">Practica 4 - Api estatica de google</a></li>
-        </ul>
-    </div>
+    
+    <button type="button" class="btn btn-primary" onclick="obtieneUbicacion()">Obtener ubicacion</button>
+    <div id="mapa" style="width: 800px; height: 500px; background-color: #658EDE;"></div>
+
+
+    <script>
+
+        function obtieneUbicacion(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(muestraPosicion);
+            } else {
+                alert("No");
+            }
+        }
+
+        function muestraPosicion(posicion) {
+            var coordenadas = posicion.coords.latitude + "," + posicion.coords.longitude;
+            console.log(coordenadas);
+            var imagenurl = "https://maps.googleapis.com/maps/api/staticmap?center=" + coordenadas + "&zoom=17&size=400x300&key=AIzaSyADjOfdGIg-7JiqjoTstMN9el4g-nLhxxA";
+            console.log(imagenurl);
+            document.getElementById("mapa").innerHTML = "<img src=" + imagenurl + ">";
+        }
+
+    </script>
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
