@@ -37,6 +37,39 @@
 
         function iniciaMapa(){
             map = new google.maps.Map(document.getElementById("map"), propiedades);
+
+
+            var icono = {
+                url : "https://images.app.goo.gl/qTGpZg8XfaoSh3Nr6"
+
+            }
+
+            var marker = new google.maps.Marker({
+                position: {lat: 0, lng: 0},
+                icon : icono,
+                scaledSize: new google.maps.Point(50,50),
+                map: map
+            });
+
+            if(navigator.geolocation){
+                moverPosition(marker);
+            }
+        }
+
+        function moverPosition(){
+            navigator.geolocation.getCurrentPosition(position => {
+                var pos = {
+                    lat : position.coords.latitude,
+                    lng : position.coords.longitude
+                }
+
+                marker.setPosition( new google.maps.LatLng(position.coords.latitude, position.coords.longitude))
+                map.panTo(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+                map.setCenter(pos);
+
+            });
+
+        
         }
 
     </script>
