@@ -12,6 +12,7 @@
         html, body {
             margin: 0px;
             padding: 0px;
+            background-color: #203C94;
         }
 
         #map {
@@ -20,11 +21,68 @@
             height: 340px;
 
         }
+
+        #tamaño {
+
+            width: 100%;
+            height: 340px;
+
+        }
+
+        #cabeza2
+        {
+            background-color: #FFC048;
+            color: #fff;
+            padding: 18px;
+            letter-spacing: 1px;
+            width: auto;
+            display: inline-block;
+        }
+
+        #textcolor{
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
     </style>
 </head>
 <body>
 
-    <div class="container text-center small">
+    <div class="container-fluid" >
+        <div class="row">
+            <div class="col-12 text-center m-2">
+                <div id="cabeza2"  style="padding: 10px 60px;">
+                    <h2>W A T C H  P O S I T I O N</h1>  
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-10 text-center">
+                <div id="map"></div>
+            </div>
+            <div class="col-12 col-lg-2" id="tamaño">
+                <div class="row">
+                    <div class="col-6">
+                        <button class="btn btn-sm btn-primary" id="boton">VerPosición</button>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn btn-sm btn-warning" id="botondetener">Detener</button>
+                    </div>
+                </div>
+                <p id="textcolor" >Info:</p>
+                <div class="col-12" id="datos"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+  <!--  <div class="container text-center small">
         <div class="row m-2">
             <div class="col-6">
                 <button class="btn btn-sm btn-primary" id="boton">WatchPosition</button>
@@ -38,7 +96,7 @@
         </div>
     </div>
 
-    <div id="map"></div>
+    <div id="map"></div> -->
 
     <script>
 
